@@ -19,5 +19,6 @@ app.listen(8081, function () {
 })
 
 app.get('/test', function (req, res) {
+    console.log('working')
     res.send(mockAPIResponse)
 })
