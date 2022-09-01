@@ -1,9 +1,13 @@
 import "babel-polyfill";
 async function handleSubmit(event) {
     event.preventDefault()
-
+    
     // check what text was put into the form field
     let formText = document.getElementById('name').value
+    if(!formText){
+        alert('insert a url');
+        return;
+    }
     Client.checkForName(formText)
     // test url: 'https://webpack.js.org/guides/'
     let data = await fetchingAPI('http://localhost:8081/api',{url:formText});
