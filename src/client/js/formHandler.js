@@ -50,27 +50,30 @@ async function fetchingAPI(url = "" , data={}){
 // N+: strong negative
 // NONE: without polarity
 function checkPolarity(polarityScore){
+    let result = '';
     // results from https://learn.meaningcloud.com/developer/sentiment-analysis/2.1/doc/response
     switch(polarityScore){
+        
         case 'P+': 
-            return 'strong positive'
+            result = 'strong positive'
             break;
         case 'P': 
-            return 'positive'
+            result = 'positive'
             break;
         case 'NEU': 
-            return 'neutral'
+            result = 'neutral'
             break;
         case 'N': 
-            return 'negative'
+            result = 'negative'
             break;
         case 'N+': 
-            return 'strong negative'
+            result = 'strong negative'
             break;
         case 'NONE': 
-            return 'without polarity'
+            result = 'without polarity'
             break;
     }
+    return result.toUpperCase();
 
 }
 
