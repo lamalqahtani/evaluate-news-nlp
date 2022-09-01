@@ -1,11 +1,14 @@
 const path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
+const dotenv = require('dotenv')
+dotenv.config()
 const app = express()
 
 //API Part
 const baseURL = "https://api.meaningcloud.com/sentiment-2.1"
-const API_KEY = "95c2f34c0fa48d78f8c5923b8f970fd6"
+const API_KEY = process.env.API_KEY
+console.log(`Your API key is ${process.env.API_KEY}`)
 
 app.use(express.static('dist'))
 
